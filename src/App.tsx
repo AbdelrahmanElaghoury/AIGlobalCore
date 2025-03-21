@@ -19,23 +19,24 @@ function App() {
     <div className="min-h-screen bg-aigc-white">
       {/* Navigation */}
       <nav className="fixed w-full bg-aigc-white shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-2"> {/* Drastically reduced padding */}
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8"> {/* Responsive padding */}
           <div className="flex justify-between h-16">
-            <div className="flex items-center">
+            <div className="flex items-center space-x-2">
               <img
                 src="/assets/AIGlobalCore.png"
                 alt="AIGlobalCore Logo"
-                className="h-10 w-auto"
+                className="h-8 w-auto sm:h-10" // Responsive logo size
               />
-              <span className="text-aigc-dark-blue text-xl font-bold ml-2">AIGlobalCore</span>
+              <span className="text-aigc-dark-blue text-lg sm:text-xl font-bold whitespace-nowrap">
+                AIGlobalCore
+              </span>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
               {['home', 'about', 'services', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`text-lg font-medium transition-colors ${activeSection === section ? 'text-aigc-dark-red' : 'text-aigc-dark-blue hover:text-aigc-dark-red'
-                    }`}
+                  className={`text-base md:text-lg font-medium transition-colors ${activeSection === section ? 'text-aigc-dark-red' : 'text-aigc-dark-blue hover:text-aigc-dark-red'}`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
@@ -44,7 +45,7 @@ function App() {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-aigc-dark-blue hover:text-aigc-dark-red"
+                className="text-aigc-dark-blue hover:text-aigc-dark-red p-2"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -53,7 +54,7 @@ function App() {
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-aigc-white">
-            <div className="px-1 pt-2 pb-3 space-y-1"> {/* Reduced padding */}
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {['home', 'about', 'services', 'contact'].map((section) => (
                 <button
                   key={section}
@@ -75,7 +76,7 @@ function App() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-aigc-white">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             About Us
           </h2>
@@ -101,7 +102,7 @@ function App() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             Our Services
           </h2>
@@ -144,7 +145,7 @@ function App() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-aigc-white">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             Contact Us
           </h2>
@@ -192,18 +193,20 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-50 text-aigc-white py-8">
-        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-2"> {/* Drastically reduced padding */}
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-4 md:mb-0">
+      <footer className="bg-gray-50 py-6">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8"> {/* Responsive padding */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-2">
               <img
                 src="/assets/AIGlobalCore.png"
                 alt="AIGlobalCore Logo"
-                className="h-8 w-auto mr-2"
+                className="h-6 w-auto sm:h-8" // Responsive logo size
               />
-              <span className="text-xl font-bold text-aigc-dark-blue">AIGlobalCore</span>
+              <span className="text-aigc-dark-blue text-base sm:text-xl font-bold whitespace-nowrap">
+                AIGlobalCore
+              </span>
             </div>
-            <p className="text-sm text-aigc-dark-blue">
+            <p className="text-xs sm:text-sm text-aigc-dark-blue text-center">
               © 2024 AIGlobalCore. Proudly Made in the USA.
             </p>
           </div>
