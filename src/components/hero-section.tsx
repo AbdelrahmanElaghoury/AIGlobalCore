@@ -1,9 +1,9 @@
 'use client';
 
-import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Globe } from "@/components/ui/globe";
-import { motion } from "framer-motion";
+import { HyperText } from "@/components/ui/hyper-text";
+import { BackgroundPaths } from "@/components/ui/background-paths"; // Import BackgroundPaths
 
 export function SplineSceneBasic() {
   const titleVariants = {
@@ -11,21 +11,14 @@ export function SplineSceneBasic() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 1.5, ease: "easeOut" }
-    },
-  };
-
-  const subtitleVariants = {
-    hidden: { y: 100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 1.5, ease: "easeOut" }
+      transition: { duration: 1.5, ease: "easeOut" },
     },
   };
 
   return (
-    <Card className="w-full min-h-screen bg-aigc-dark-blue relative overflow-hidden">
+    <BackgroundPaths
+      className="w-full min-h-screen bg-aigc-dark-blue relative overflow-hidden" // Match original Card styling
+    >
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
@@ -33,23 +26,14 @@ export function SplineSceneBasic() {
       />
       <div className="flex flex-col md:flex-row min-h-screen">
         {/* Left content */}
-        <div className="flex-1 p-6 md:p-12 relative z-10 flex flex-col justify-center items-center md:items-start">
-          <motion.h1
+        <div className="flex-1 p-6 ml-12 md:p-12 relative z-10 flex flex-col justify-center items-center md:items-start">
+          <HyperText
+            text="Innovate To Elevate"
+            duration={800}
+            framerProps={titleVariants}
             className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-aigc-white to-aigc-white"
-            variants={titleVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Innovate To Elevate
-          </motion.h1>
-          {/* <motion.p
-            className="mt-4 sm:mt-6 text-lg sm:text-xl md:text-2xl text-aigc-white max-w-xl text-center md:text-left"
-            variants={subtitleVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            Innovate To Elevate
-          </motion.p> */}
+            animateOnLoad={false} // Hover-only animation, or set to true for load + hover
+          />
         </div>
 
         {/* Right content - Globe */}
@@ -57,6 +41,6 @@ export function SplineSceneBasic() {
           <Globe className="w-full h-full max-w-[500px] md:max-w-[600px]" />
         </div>
       </div>
-    </Card>
+    </BackgroundPaths>
   );
 }

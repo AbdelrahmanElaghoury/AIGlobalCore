@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Brain, Database, LineChart, ChevronRight, Flag } from 'lucide-react';
+import { Menu, X, Brain, Database, LineChart } from 'lucide-react';
 import { SplineSceneBasic } from './components/hero-section';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     <div className="min-h-screen bg-aigc-white">
       {/* Navigation */}
       <nav className="fixed w-full bg-aigc-white shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-2"> {/* Drastically reduced padding */}
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <img
@@ -53,12 +53,12 @@ function App() {
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-aigc-white">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-1 pt-2 pb-3 space-y-1"> {/* Reduced padding */}
               {['home', 'about', 'services', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-aigc-dark-blue hover:text-aigc-dark-red"
+                  className="block w-full text-left px-2 py-2 text-base font-medium text-aigc-dark-blue hover:text-aigc-dark-red"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
@@ -75,7 +75,7 @@ function App() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-aigc-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             About Us
           </h2>
@@ -101,7 +101,7 @@ function App() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             Our Services
           </h2>
@@ -144,7 +144,7 @@ function App() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-aigc-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6"> {/* Keeping previous reduction */}
           <h2 className="text-3xl md:text-4xl font-bold text-aigc-dark-blue text-center mb-12">
             Contact Us
           </h2>
@@ -193,7 +193,7 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-gray-50 text-aigc-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-2"> {/* Drastically reduced padding */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <img
