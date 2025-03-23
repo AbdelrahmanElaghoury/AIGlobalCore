@@ -1,12 +1,11 @@
 ## AIGlobalCore
-
 Below is the file structure of the project:
 .
 ├── public/
 │   └── assets/
 │       ├── AIGlobalCore.png
 │       ├── Insta_logo.png
-│       ├── The_10_Global_Hotspots_of_Aut...
+│       ├── The_10_Global_Hotspots_of_Automation.jpg
 │       └── X_logo.png
 ├── src/
 │   ├── components/
