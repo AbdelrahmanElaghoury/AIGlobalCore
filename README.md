@@ -1,0 +1,36 @@
+## AIGlobalCore
+
+Below is the file structure of the project:
+.
+├── public/
+│ └── assets/
+│ ├── AIGlobalCore.png
+│ ├── Insta_logo.png
+│ ├── The_10_Global_Hotspots_of_Aut...
+│ └── X_logo.png
+├── src/
+│ ├── components/
+│ │ ├── ui/
+│ │ │ ├── background-paths.tsx
+│ │ │ ├── button.tsx
+│ │ │ ├── globe.tsx
+│ │ │ ├── hyper-text.tsx
+│ │ │ └── spotlight.tsx
+│ │ └── hero-section.tsx
+│ ├── lib/
+│ │ └── utils.ts
+│ ├── App.tsx
+│ ├── index.css
+│ ├── main.tsx
+│ └── vite-env.d.ts
+├── .gitignore
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
